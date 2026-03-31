@@ -9,7 +9,7 @@ release = false
 dist = "dist"
 
 # The public URL from which assets are to be served.
-public_url = "/"
+public_url = "/Elite-Fashion/"
 
 [watch]
 # Paths to watch. The `build.target`'s parent folder is watched by default.
