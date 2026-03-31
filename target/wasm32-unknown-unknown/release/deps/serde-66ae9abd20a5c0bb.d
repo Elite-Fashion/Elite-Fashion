@@ -1,0 +1,14 @@
+/home/ala/dev/rust/scrolling website/target/wasm32-unknown-unknown/release/deps/serde-66ae9abd20a5c0bb.d: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/ala/dev/rust/scrolling\ website/target/wasm32-unknown-unknown/release/build/serde-accdbd473a1b43e5/out/private.rs
+
+/home/ala/dev/rust/scrolling website/target/wasm32-unknown-unknown/release/deps/libserde-66ae9abd20a5c0bb.rlib: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/ala/dev/rust/scrolling\ website/target/wasm32-unknown-unknown/release/build/serde-accdbd473a1b43e5/out/private.rs
+
+/home/ala/dev/rust/scrolling website/target/wasm32-unknown-unknown/release/deps/libserde-66ae9abd20a5c0bb.rmeta: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/ala/dev/rust/scrolling\ website/target/wasm32-unknown-unknown/release/build/serde-accdbd473a1b43e5/out/private.rs
+
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/ala/dev/rust/scrolling\ website/target/wasm32-unknown-unknown/release/build/serde-accdbd473a1b43e5/out/private.rs:
+
+# env-dep:OUT_DIR=/home/ala/dev/rust/scrolling website/target/wasm32-unknown-unknown/release/build/serde-accdbd473a1b43e5/out

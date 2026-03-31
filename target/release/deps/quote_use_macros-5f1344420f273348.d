@@ -1,0 +1,10 @@
+/home/ala/dev/rust/scrolling website/target/release/deps/quote_use_macros-5f1344420f273348.d: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/lib.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/use_parser.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/core.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/std.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/2021.rs
+
+/home/ala/dev/rust/scrolling website/target/release/deps/libquote_use_macros-5f1344420f273348.so: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/lib.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/use_parser.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/core.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/std.rs /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/2021.rs
+
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/lib.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/use_parser.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/core.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/std.rs:
+/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-use-macros-0.8.4/src/prelude/2021.rs:
