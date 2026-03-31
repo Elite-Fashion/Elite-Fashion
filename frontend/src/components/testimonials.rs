@@ -65,15 +65,15 @@ pub fn Testimonials() -> impl IntoView {
     };
     
     view! {
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 80px 0;">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">"What Our Customers Say"</h2>
-                    <p class="section-subtitle">"Real stories from real users"</p>
+                    <h2 class="section-title" style="color: #333; font-size: 2.5rem; margin-bottom: 10px;">"What Our Customers Say"</h2>
+                    <p class="section-subtitle" style="color: #666; font-size: 1.2rem;">"Real stories from real users"</p>
                 </div>
                 
                 <div class="testimonials-container">
-                    <div class="testimonial-slider">
+                    <div class="testimonial-slider" style="background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 40px;">
                         {testimonials.iter().enumerate().map(|(index, testimonial)| {
                             let is_active = active_testimonial.get() == index;
                             
@@ -81,20 +81,25 @@ pub fn Testimonials() -> impl IntoView {
                                 <div 
                                     class="testimonial-card"
                                     class:testimonial-active=is_active
+                                    style="background: white; border-radius: 15px; padding: 30px; 
+                                           box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;
+                                           border-left: 4px solid #667eea;"
                                 >
-                                    <div class="testimonial-header">
-                                        <div class="testimonial-avatar">
-                                            <span class="avatar-emoji">{testimonial.avatar}</span>
+                                    <div class="testimonial-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+                                            <span class="avatar-emoji" style="font-size: 1.5rem;">{testimonial.avatar}</span>
                                         </div>
                                         <div class="testimonial-info">
-                                            <h4 class="testimonial-name">{testimonial.name}</h4>
-                                            <p class="testimonial-role">{testimonial.role}</p>
+                                            <h4 class="testimonial-name" style="color: #333; font-size: 1.3rem; margin-bottom: 5px;">{testimonial.name}</h4>
+                                            <p class="testimonial-role" style="color: #666; margin: 0;">{testimonial.role}</p>
                                         </div>
-                                        <div class="testimonial-rating">
-                                            {(0..testimonial.rating).map(|_| view! { <span>"⭐"</span> }).collect_view()}
+                                        <div class="testimonial-rating" style="margin-left: auto;">
+                                            {(0..testimonial.rating).map(|_| view! { 
+                                                <span style="color: #ffc107; font-size: 1.2rem; margin-right: 2px;">"⭐"</span> 
+                                            }).collect_view()}
                                         </div>
                                     </div>
-                                    <blockquote class="testimonial-content">
+                                    <blockquote class="testimonial-content" style="color: #555; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin: 0; padding-left: 20px; border-left: 2px solid #e9ecef;">
                                         "{testimonial.content}"
                                     </blockquote>
                                 </div>
@@ -102,8 +107,9 @@ pub fn Testimonials() -> impl IntoView {
                         }).collect_view()}
                     </div>
                     
-                    <div class="testimonial-controls">
-                        <button class="testimonial-btn" on:click=prev_testimonial>
+                    <div class="testimonial-controls" style="margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <button class="testimonial-btn" on:click=prev_testimonial 
+                                style="background: #667eea; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease;">
                             "←"
                         </button>
                         <div class="testimonial-dots">
@@ -114,28 +120,30 @@ pub fn Testimonials() -> impl IntoView {
                                         class="testimonial-dot"
                                         class:dot-active=is_active
                                         on:click=move |_| set_active_testimonial.set(index)
+                                        style="width: 12px; height: 12px; border-radius: 50%; border: none; margin: 0 5px; cursor: pointer; transition: all 0.3s ease;"
                                     ></button>
                                 }
                             }).collect_view()}
                         </div>
-                        <button class="testimonial-btn" on:click=next_testimonial>
+                        <button class="testimonial-btn" on:click=next_testimonial
+                                style="background: #667eea; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease;">
                             "→"
                         </button>
                     </div>
                 </div>
                 
-                <div class="testimonials-stats">
-                    <div class="stat-card">
-                        <h3 class="stat-number">"50K+"</h3>
-                        <p class="stat-label">"Happy Customers"</p>
+                <div class="testimonials-stats" style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                        <h3 class="stat-number" style="color: #667eea; font-size: 2.5rem; font-weight: bold; margin-bottom: 10px;">"50K+"</h3>
+                        <p class="stat-label" style="color: #666; font-size: 1.1rem; margin: 0;">"Happy Customers"</p>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">"4.9/5"</h3>
-                        <p class="stat-label">"Average Rating"</p>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                        <h3 class="stat-number" style="color: #667eea; font-size: 2.5rem; font-weight: bold; margin-bottom: 10px;">"4.9/5"</h3>
+                        <p class="stat-label" style="color: #666; font-size: 1.1rem; margin: 0;">"Average Rating"</p>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">"98%"</h3>
-                        <p class="stat-label">"Would Recommend"</p>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                        <h3 class="stat-number" style="color: #667eea; font-size: 2.5rem; font-weight: bold; margin-bottom: 10px;">"98%"</h3>
+                        <p class="stat-label" style="color: #666; font-size: 1.1rem; margin: 0;">"Would Recommend"</p>
                     </div>
                 </div>
             </div>
