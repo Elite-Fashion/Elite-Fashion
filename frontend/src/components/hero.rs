@@ -13,7 +13,7 @@ pub fn Hero() -> impl IntoView {
     });
     
     view! {
-        <section id="home" class="hero">
+        <section id="home" class="hero" style="padding-top: 80px;">
             <div class="hero-background">
                 <div class="hero-overlay"></div>
             </div>
