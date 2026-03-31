@@ -29,8 +29,18 @@ jobs:
         ls -la dist/
         echo "=== STATIC FOLDER CONTENTS ==="
         ls -la dist/static/
-        echo "=== INDEX.HTML CONTENTS ==="
-        head -20 dist/index.html
+        echo "=== STATIC IMAGES ==="
+        ls -la dist/static/images/
+        echo "=== INDEX.HTML HEAD (first 50 lines) ==="
+        head -50 dist/index.html
+        echo "=== INDEX.HTML TAIL (last 20 lines) ==="
+        tail -20 dist/index.html
+        echo "=== CHECK IF JS FILES EXIST ==="
+        ls -la dist/*.js
+        echo "=== CHECK IF WASM FILES EXIST ==="
+        ls -la dist/*.wasm
+        echo "=== FILE SIZES ==="
+        du -h dist/*
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
