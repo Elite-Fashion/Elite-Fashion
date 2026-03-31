@@ -24,7 +24,13 @@ jobs:
       run: trunk build --release
       
     - name: Check dist folder
-      run: ls -la dist/
+      run: |
+        echo "=== DIST FOLDER CONTENTS ==="
+        ls -la dist/
+        echo "=== STATIC FOLDER CONTENTS ==="
+        ls -la dist/static/
+        echo "=== INDEX.HTML CONTENTS ==="
+        head -20 dist/index.html
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
