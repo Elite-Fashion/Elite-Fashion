@@ -48,3 +48,8 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         force_orphan: true
+        
+    - name: Test deployed site
+      run: |
+        echo "=== TESTING DEPLOYED SITE ==="
+        curl -s https://elite-fashion.github.io/Elite-Fashion/ | head -20
