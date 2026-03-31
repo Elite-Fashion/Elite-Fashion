@@ -31,7 +31,7 @@ pub fn Hero() -> impl IntoView {
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/static/images/product-hero.webp" alt="Product Hero" class="hero-img"/>
+                    <img src="/Elite-Fashion/static/images/product-hero.webp" alt="Product Hero" class="hero-img"/>
                 </div>
             </div>
             <div class="scroll-indicator">
