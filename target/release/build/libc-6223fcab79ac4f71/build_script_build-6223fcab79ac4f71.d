@@ -1,5 +1,0 @@
-/home/ala/dev/rust/scrolling website/target/release/build/libc-6223fcab79ac4f71/build_script_build-6223fcab79ac4f71.d: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.183/build.rs
-
-/home/ala/dev/rust/scrolling website/target/release/build/libc-6223fcab79ac4f71/build_script_build-6223fcab79ac4f71: /home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.183/build.rs
-
-/home/ala/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.183/build.rs:

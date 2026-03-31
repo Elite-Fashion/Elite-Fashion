@@ -1,0 +1,17 @@
+# Rust build artifacts
+/target/
+/dist/
+
+# Trunk build artifacts
+dist/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
