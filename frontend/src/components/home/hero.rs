@@ -1,8 +1,10 @@
 use leptos::*;
 use leptos_router::*;
+use crate::config::AppConfig;
 
 #[component]
 pub fn Hero() -> impl IntoView {
+    let config = AppConfig::new();
     let (text_visible, set_text_visible) = create_signal(false);
     
     // Trigger animation after component mounts
@@ -23,7 +25,7 @@ pub fn Hero() -> impl IntoView {
                     <h1 class="hero-title">"Premium Fashion Collection"</h1>
                     <p class="hero-subtitle">"Discover timeless elegance and modern style with our exclusive clothing line"</p>
                     <div class="hero-buttons">
-                        <A href="/shop" class="btn btn-primary">
+                    <A href={config.route_url("/shop")} class="btn btn-primary">
                             "Shop Now"
                         </A>
                         <button class="btn btn-secondary">
@@ -32,7 +34,7 @@ pub fn Hero() -> impl IntoView {
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/static/images/product-hero.webp" alt="Product Hero" class="hero-img"/>
+                    <img src={config.static_url("/images/product-hero.webp")} alt="Product Hero" class="hero-img"/>
                 </div>
             </div>
             <div class="scroll-indicator">

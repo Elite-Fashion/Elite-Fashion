@@ -1,17 +1,19 @@
 use leptos::*;
+use crate::config::AppConfig;
 
 #[component]
 pub fn Gallery() -> impl IntoView {
     let (selected_image, set_selected_image) = create_signal(0);
     let (lightbox_open, set_lightbox_open) = create_signal(false);
     
+    let config = AppConfig::new();
     let gallery_images = vec![
-        "/static/images/product-1.webp",
-        "/static/images/product-2.webp", 
-        "/static/images/product-3.webp",
-        "/static/images/product-4.webp",
-        "/static/images/product-5.webp",
-        "/static/images/product-6.webp",
+        config.static_url("/images/product-1.webp"),
+        config.static_url("/images/product-2.webp"), 
+        config.static_url("/images/product-3.webp"),
+        config.static_url("/images/product-4.webp"),
+        config.static_url("/images/product-5.webp"),
+        config.static_url("/images/product-6.webp"),
     ];
     
     let gallery_images_len = gallery_images.len();
@@ -45,7 +47,7 @@ pub fn Gallery() -> impl IntoView {
                 
                 <div class="gallery-grid">
                     {gallery_images.iter().enumerate().map(|(index, image_src)| {
-                        let img_src = *image_src;
+                        let img_src = image_src.clone();
                         
                         view! {
                             <div 
@@ -86,7 +88,7 @@ pub fn Gallery() -> impl IntoView {
                         "×"
                     </button>
                     <img 
-                        src={move || gallery_images[selected_image.get()]} 
+                        src={move || gallery_images[selected_image.get()].clone()} 
                         alt="Lightbox Image" 
                         class="lightbox-img"
                     />

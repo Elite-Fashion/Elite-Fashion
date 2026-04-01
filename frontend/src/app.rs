@@ -1,18 +1,18 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::{home::app::HomeApp, shop::{app::ShopApp, app::DashboardApp, app::ProfileApp}};
+use crate::config::AppConfig;
 
 #[component]
 pub fn App() -> impl IntoView {
-    // Use /Elite-Fashion/ for production, / for local development
-    let base_path = if cfg!(feature = "production") {
-        "/Elite-Fashion/"
-    } else {
-        "/"
-    };
+    let config = AppConfig::new();
+    
+    // Use the config base_path for routing
+    let base_path = config.base_url.clone();
+    let base_path_static = base_path.leak();
  
     view! {
-        <Router base={base_path}>
+        <Router base={base_path_static}>
             <Routes>
                 // Shop app routes
                 <Route path="/shop" view=ShopApp/>
