@@ -12,18 +12,13 @@ pub fn App() -> impl IntoView {
     let base_path_static = base_path.leak();
  
     view! {
-        <Router base={base_path_static}>
+        <Router>
             <Routes>
-                // Shop app routes
-                <Route path="/shop" view=ShopApp/>
-                <Route path="/shop/dashboard" view=DashboardApp/>
-                <Route path="/shop/profile" view=ProfileApp/>
-                
-                // Home app routes
-                <Route path="/" view=HomeApp/>
-                
-                // Fallback - redirect to home for unknown routes
-                <Route path="/*any" view=HomeApp/>
+                <Route path={config.route_url("/shop")} view=ShopApp/>
+                <Route path={config.route_url("/shop/dashboard")} view=DashboardApp/>
+                <Route path={config.route_url("/shop/profile")} view=ProfileApp/>
+                <Route path={config.route_url("/")} view=HomeApp/>
+                <Route path={config.route_url("/*any")} view=HomeApp/>
             </Routes>
         </Router>
     }
