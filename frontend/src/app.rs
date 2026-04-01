@@ -4,8 +4,15 @@ use crate::components::{home::app::HomeApp, shop::{app::ShopApp, app::DashboardA
 
 #[component]
 pub fn App() -> impl IntoView {
+    // Use /Elite-Fashion/ for production, / for local development
+    let base_path = if cfg!(feature = "production") {
+        "/Elite-Fashion/"
+    } else {
+        "/"
+    };
+ 
     view! {
-        <Router base="/Elite-Fashion/">
+        <Router base={base_path}>
             <Routes>
                 // Shop app routes
                 <Route path="/shop" view=ShopApp/>
