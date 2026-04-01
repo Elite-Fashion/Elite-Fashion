@@ -4,7 +4,7 @@ use crate::components::shop::{navigation::Navigation, shop::Shop, dashboard::Das
 #[component]
 pub fn ShopLayout(children: Children) -> impl IntoView {
     view! {
-        <div class="app2" style="background: linear-gradient(45deg, #1a1a2e, #16213e); min-height: 100vh;">
+        <div class="shopapp" style="background: linear-gradient(45deg, #1a1a2e, #16213e); min-height: 100vh;">
             <Navigation/>
             <div class="content2" style="padding-top: 0;">
                 {children()}

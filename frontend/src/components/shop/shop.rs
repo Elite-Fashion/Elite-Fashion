@@ -34,7 +34,7 @@ pub fn Shop() -> impl IntoView {
                 </div>
                 
                 <div class="back-to-home" style="text-align: center; margin-top: 40px;">
-                    <a href="/Elite-Fashion/" style="background: white; color: #667eea; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-weight: 500; transition: all 0.3s ease; display: inline-block;">
+                    <a href="/" style="background: white; color: #667eea; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-weight: 500; transition: all 0.3s ease; display: inline-block;">
                         "← Back to Home"
                     </a>
                 </div>

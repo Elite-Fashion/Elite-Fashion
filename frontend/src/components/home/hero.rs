@@ -23,7 +23,7 @@ pub fn Hero() -> impl IntoView {
                     <h1 class="hero-title">"Premium Fashion Collection"</h1>
                     <p class="hero-subtitle">"Discover timeless elegance and modern style with our exclusive clothing line"</p>
                     <div class="hero-buttons">
-                        <A href="/Elite-Fashion/shop" class="btn btn-primary">
+                        <A href="/shop" class="btn btn-primary">
                             "Shop Now"
                         </A>
                         <button class="btn btn-secondary">
@@ -32,7 +32,7 @@ pub fn Hero() -> impl IntoView {
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/Elite-Fashion/static/images/product-hero.webp" alt="Product Hero" class="hero-img"/>
+                    <img src="/static/images/product-hero.webp" alt="Product Hero" class="hero-img"/>
                 </div>
             </div>
             <div class="scroll-indicator">

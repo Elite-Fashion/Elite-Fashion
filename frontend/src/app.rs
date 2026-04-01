@@ -8,17 +8,16 @@ pub fn App() -> impl IntoView {
         <Router base="/Elite-Fashion/">
             <Routes>
                 // Shop app routes
-                <Route path="/Elite-Fashion//shop" view=ShopApp/>
-                <Route path="/Elite-Fashion//shop/dashboard" view=DashboardApp/>
-                <Route path="/Elite-Fashion//shop/profile" view=ProfileApp/>
+                <Route path="/shop" view=ShopApp/>
+                <Route path="/shop/dashboard" view=DashboardApp/>
+                <Route path="/shop/profile" view=ProfileApp/>
                 
                 // Home app routes
-                <Route path="/Elite-Fashion/" view=HomeApp/>
+                <Route path="/" view=HomeApp/>
                 
-                // Fallback
-                <Route path="/Elite-Fashion/*any" view=HomeApp/>
+                // Fallback - redirect to home for unknown routes
+                <Route path="/*any" view=HomeApp/>
             </Routes>
         </Router>
     }
 }
-

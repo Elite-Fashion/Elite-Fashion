@@ -4,7 +4,7 @@ use crate::components::home::{hero::Hero, features::Features, gallery::Gallery, 
 #[component]
 pub fn HomeApp() -> impl IntoView {
     view! {
-        <div class="app">
+        <div class="homeapp">
             <Navigation/>
             <div class="content">
                 <Hero/>

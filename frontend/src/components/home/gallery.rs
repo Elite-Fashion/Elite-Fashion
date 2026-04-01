@@ -6,12 +6,12 @@ pub fn Gallery() -> impl IntoView {
     let (lightbox_open, set_lightbox_open) = create_signal(false);
     
     let gallery_images = vec![
-        "/Elite-Fashion/static/images/product-1.webp",
-        "/Elite-Fashion/static/images/product-2.webp", 
-        "/Elite-Fashion/static/images/product-3.webp",
-        "/Elite-Fashion/static/images/product-4.webp",
-        "/Elite-Fashion/static/images/product-5.webp",
-        "/Elite-Fashion/static/images/product-6.webp",
+        "/static/images/product-1.webp",
+        "/static/images/product-2.webp", 
+        "/static/images/product-3.webp",
+        "/static/images/product-4.webp",
+        "/static/images/product-5.webp",
+        "/static/images/product-6.webp",
     ];
     
     let gallery_images_len = gallery_images.len();

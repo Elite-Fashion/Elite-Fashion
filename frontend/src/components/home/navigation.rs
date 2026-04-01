@@ -28,7 +28,7 @@ pub fn Navigation() -> impl IntoView {
                     <h2>"Elite Fashion"</h2>
                 </div>
                 <div class="nav-links">
-                    <A href="/Elite-Fashion/" class="nav-link">"Home"</A>
+                    <A href="/" class="nav-link">"Home"</A>
                     <a href="#features" class="nav-link">"Features"</a>
                     <a href="#gallery" class="nav-link">"Gallery"</a>
                     <a href="#testimonials" class="nav-link">"Reviews"</a>
