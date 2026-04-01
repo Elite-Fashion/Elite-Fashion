@@ -115,6 +115,46 @@ nav.scrolled .nav-link {
     width: 100%;
 }
 
+/* App2 Navigation Styles */
+.nav-link2 {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link2:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.back-link {
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: #667eea;
+    color: white;
+}
+
+.app2-switch {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.app2-switch:hover {
+    color: #FFD700;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;

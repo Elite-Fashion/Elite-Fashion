@@ -19,5 +19,6 @@ fn main() {
         .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
         .unwrap();
     
+    // Mount the main app that handles routing internally
     mount_to_body(App)
 }

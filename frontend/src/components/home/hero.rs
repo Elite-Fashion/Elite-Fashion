@@ -23,7 +23,7 @@ pub fn Hero() -> impl IntoView {
                     <h1 class="hero-title">"Premium Fashion Collection"</h1>
                     <p class="hero-subtitle">"Discover timeless elegance and modern style with our exclusive clothing line"</p>
                     <div class="hero-buttons">
-                        <A href="/shop" class="btn btn-primary">
+                        <A href="/Elite-Fashion/shop" class="btn btn-primary">
                             "Shop Now"
                         </A>
                         <button class="btn btn-secondary">
