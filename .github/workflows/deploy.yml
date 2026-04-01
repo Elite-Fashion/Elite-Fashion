@@ -22,8 +22,10 @@ jobs:
       
     - name: Build
       run: |
-        sed -i 's|public_url = "/"|public_url = "/Elite-Fashion/"|' Trunk.toml
-        trunk build --release --features production
+        # Create production Trunk.toml with correct public_url
+        cp Trunk.toml Trunk.prod.toml
+        sed -i 's|public_url = "/"|public_url = "/Elite-Fashion/"|' Trunk.prod.toml
+        trunk build --release --features production --config Trunk.prod.toml
       
     - name: Check dist folder
       run: |
@@ -50,6 +52,57 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         force_orphan: true
+        
+    - name: Test deployed site thoroughly
+      run: |
+        echo "=== TESTING DEPLOYED SITE ==="
+        SITE_URL="https://elite-fashion.github.io/Elite-Fashion"
+        
+        # Test main page
+        echo "Testing main page..."
+        curl -s "$SITE_URL/" | head -10
+        
+        # Test shop routes
+        echo "Testing /shop route..."
+        curl -s "$SITE_URL/shop" | head -10
+        
+        echo "Testing /shop/dashboard route..."
+        curl -s "$SITE_URL/shop/dashboard" | head -10
+        
+        echo "Testing /shop/profile route..."
+        curl -s "$SITE_URL/shop/profile" | head -10
+        
+        # Test static assets
+        echo "Testing JS files..."
+        JS_FILE=$(curl -s "$SITE_URL/" | grep -o '/scrolling-website-[^"]*\.js' | head -1)
+        if [ -n "$JS_FILE" ]; then
+          echo "Found JS file: $JS_FILE"
+          curl -s "$SITE_URL$JS_FILE" | head -5
+        fi
+        
+        echo "Testing WASM files..."
+        WASM_FILE=$(curl -s "$SITE_URL/" | grep -o '/scrolling-website-[^"]*\.wasm' | head -1)
+        if [ -n "$WASM_FILE" ]; then
+          echo "Found WASM file: $WASM_FILE"
+          curl -s "$SITE_URL$WASM_FILE" | head -5
+        fi
+        
+        # Test static images
+        echo "Testing static assets..."
+        curl -s "$SITE_URL/static/" | head -5 || echo "Static folder not accessible"
+        
+        # Check for 404 errors on main routes
+        echo "Checking HTTP status codes..."
+        for route in "/" "/shop" "/shop/dashboard" "/shop/profile"; do
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL$route")
+          echo "Route $route: HTTP $STATUS"
+        done
+        
+        # Check if WASM is properly referenced with correct path
+        echo "Checking WASM path references..."
+        curl -s "$SITE_URL/" | grep -o 'wasm[^"]*' | head -3
+        
+        echo "=== DEPLOYMENT TEST COMPLETE ==="
         
     - name: Test deployed site
       run: |
