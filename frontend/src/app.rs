@@ -13,10 +13,10 @@ pub fn App() -> impl IntoView {
                 <Route path="/Elite-Fashion//shop/profile" view=ProfileApp/>
                 
                 // Home app routes
-                <Route path="/Elite-Fashion//" view=HomeApp/>
+                <Route path="/Elite-Fashion/" view=HomeApp/>
                 
                 // Fallback
-                <Route path="/Elite-Fashion//*any" view=HomeApp/>
+                <Route path="/Elite-Fashion/*any" view=HomeApp/>
             </Routes>
         </Router>
     }
