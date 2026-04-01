@@ -2,6 +2,7 @@
 /target/
 /dist/
 
+
 # Trunk build artifacts
 dist/
 
