@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos_router::*;
 
 #[component]
 pub fn Hero() -> impl IntoView {
@@ -22,9 +23,9 @@ pub fn Hero() -> impl IntoView {
                     <h1 class="hero-title">"Premium Fashion Collection"</h1>
                     <p class="hero-subtitle">"Discover timeless elegance and modern style with our exclusive clothing line"</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary">
+                        <A href="/shop" class="btn btn-primary">
                             "Shop Now"
-                        </button>
+                        </A>
                         <button class="btn btn-secondary">
                             "View Collection"
                         </button>

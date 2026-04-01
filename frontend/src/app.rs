@@ -1,22 +1,39 @@
-use crate::components::{Hero, Features, Gallery, Testimonials, CallToAction, Footer};
+use crate::components::{Hero, Features, Gallery, Testimonials, CallToAction, Footer, Shop};
 use leptos::*;
+use leptos_router::*;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::closure::Closure;
 
 #[component]
+fn Home() -> impl IntoView {
+    view! {
+        <main>
+            <Hero/>
+            <Features/>
+            <Gallery/>
+            <Testimonials/>
+            <CallToAction/>
+            <Footer/>
+        </main>
+    }
+}
+                    /*<Routes>
+                        <Route path="/" view=Home/>
+                        <Route path="/shop" view=Shop/>
+                    </Routes>*/
+#[component]
 pub fn App() -> impl IntoView {
     view! {
-        <div class="app">
-            <Navigation/>
+        <Router>
+            <div class="app">
+                <Navigation/>
+                <div class="content">
+                </div>
             <main>
-                <Hero/>
-                <Features/>
-                <Gallery/>
-                <Testimonials/>
-                <CallToAction/>
+                <Home/>
             </main>
-            <Footer/>
-        </div>
+            </div>
+        </Router>
     }
 }
 
@@ -45,7 +62,7 @@ fn Navigation() -> impl IntoView {
                     <h2>"Elite Fashion"</h2>
                 </div>
                 <div class="nav-links">
-                    <a href="#home" class="nav-link">"Home"</a>
+                    <A href="/" class="nav-link">"Home"</A>
                     <a href="#features" class="nav-link">"Features"</a>
                     <a href="#gallery" class="nav-link">"Gallery"</a>
                     <a href="#testimonials" class="nav-link">"Reviews"</a>
@@ -53,5 +70,9 @@ fn Navigation() -> impl IntoView {
                 </div>
             </div>
         </nav>
+        <Routes>
+            <Route path="/" view=Home/>
+            <Route path="/shop" view=Shop/>
+        </Routes>
     }
 }
