@@ -27,15 +27,15 @@ pub fn Navigation() -> impl IntoView {
         <nav class:scrolled=scrolled>
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h2>"Elite Fashion"</h2>
+                    <a href="#home" class="logo-link">
+                        <h2>"Elite Fashion"</h2>
+                    </a>
                 </div>
                 <div class="nav-links">
-                    <A href={config.route_url("/")} class="nav-link">"Home"</A>
                     <a href="#features" class="nav-link">"Features"</a>
                     <a href="#gallery" class="nav-link">"Gallery"</a>
                     <a href="#testimonials" class="nav-link">"Reviews"</a>
-                    <a href="#contact" class="nav-link">"Contact"</a>
-                    //<A href={config.route_url("/shop")} class="nav-link app2-switch">"Switch to Shop"</A>
+                    <a href="#contact" class="nav-link">"Contact"</a>#
                 </div>
             </div>
         </nav>
