@@ -112,7 +112,7 @@ fn shop_items() -> Vec<ShopItem> {
         ShopItem {
             name: "Premium Business Suit",
             description: "Expertly tailored for the modern professional. Premium fabric with exceptional comfort.",
-            price: "$299",
+            price: "$298",
             image: config.static_url("/images/Premium Business Suit.webp"),
         },
         ShopItem {

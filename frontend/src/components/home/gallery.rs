@@ -7,6 +7,7 @@ pub fn Gallery() -> impl IntoView {
     let (lightbox_open, set_lightbox_open) = create_signal(false);
     
     let config = AppConfig::new();
+    
     let gallery_images = vec![
         config.static_url("/images/product-1.webp"),
         config.static_url("/images/product-2.webp"), 
