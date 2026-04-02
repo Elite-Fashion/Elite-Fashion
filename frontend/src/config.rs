@@ -17,10 +17,6 @@ impl AppConfig {
         format!("{}/static{}", self.base_url, path)
     }
     
-    pub fn asset_url(&self, path: &str) -> String {
-        format!("{}{}", self.base_url, path)
-    }
-    
     pub fn route_url(&self, path: &str) -> String {
         format!("{}{}", self.base_url, path)
     }

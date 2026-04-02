@@ -7,10 +7,6 @@ use crate::config::AppConfig;
 pub fn App() -> impl IntoView {
     let config = AppConfig::new();
     
-    // Use the config base_path for routing
-    let base_path = config.base_url.clone();
-    let base_path_static = base_path.leak();
- 
     view! {
         <Router>
             <Routes>

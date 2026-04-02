@@ -1,12 +1,9 @@
 use leptos::*;
-use leptos_router::*;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::closure::Closure;
-use crate::config::AppConfig;
 
 #[component]
 pub fn Navigation() -> impl IntoView {
-    let config = AppConfig::new();
     let (scrolled, set_scrolled) = create_signal(false);
     
     // Handle scroll effect for navigation
@@ -35,7 +32,7 @@ pub fn Navigation() -> impl IntoView {
                     <a href="#features" class="nav-link">"Features"</a>
                     <a href="#gallery" class="nav-link">"Gallery"</a>
                     <a href="#testimonials" class="nav-link">"Reviews"</a>
-                    <a href="#contact" class="nav-link">"Contact"</a>#
+                    <a href="#contact" class="nav-link">"Contact"</a>
                 </div>
             </div>
         </nav>

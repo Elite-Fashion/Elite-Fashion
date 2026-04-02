@@ -8,6 +8,7 @@ use crate::config::AppConfig;
 pub fn Navigation() -> impl IntoView {
     let config = AppConfig::new();
     let (scrolled, set_scrolled) = create_signal(false);
+    let location = use_location();
     
     // Handle scroll effect for navigation
     leptos::create_effect(move |_| {
@@ -22,6 +23,17 @@ pub fn Navigation() -> impl IntoView {
         window.set_onscroll(Some(closure.as_ref().unchecked_ref()));
         closure.forget();
     });
+    
+    // Helper function to check if a route is active
+    let is_active = move |path: &str| {
+        let current_path = location.pathname.get();
+        match path {
+            "/shop" => current_path == path || current_path == "/shop/",
+            "/shop/dashboard" => current_path.starts_with(path),
+            "/shop/profile" => current_path.starts_with(path),
+            _ => current_path.starts_with(path),
+        }
+    };
     
     view! {
         <nav class:scrolled=scrolled style="
@@ -38,20 +50,19 @@ pub fn Navigation() -> impl IntoView {
         " style:background-color=move || if scrolled.get() { "rgba(26, 26, 46, 0.95)" } else { "rgba(26, 26, 46, 0.8)" }>
             <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <div style="color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 0;">
-                    "Shop Dashboard"
+                    <A href={config.route_url("/")} class="logo-link">
+                        <h2>"Elite Fashion"</h2>
+                    </A>
                 </div>
                 <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-                    <A href={config.route_url("/shop")} class="nav-link2">
+                    <A href={config.route_url("/shop")} class="nav-link2" attr:class=move || if is_active("/shop") { "nav-link2 active" } else { "nav-link2" }>
                         "Shop"
                     </A>
-                    <A href={config.route_url("/shop/dashboard")} class="nav-link2">
+                    <A href={config.route_url("/shop/dashboard")} class="nav-link2" attr:class=move || if is_active("/shop/dashboard") { "nav-link2 active" } else { "nav-link2" }>
                         "Dashboard"
                     </A>
-                    <A href={config.route_url("/shop/profile")} class="nav-link2">
+                    <A href={config.route_url("/shop/profile")} class="nav-link2" attr:class=move || if is_active("/shop/profile") { "nav-link2 active" } else { "nav-link2" }>
                         "Profile"
-                    </A>
-                    <A href={config.route_url("/")} class="back-link">
-                        "← Home"
                     </A>
                 </div>
             </div>

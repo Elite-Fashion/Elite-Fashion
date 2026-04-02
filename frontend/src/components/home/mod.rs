@@ -5,5 +5,3 @@ pub mod gallery;
 pub mod testimonials;
 pub mod footer;
 pub mod navigation;
-
-pub use app::*;
