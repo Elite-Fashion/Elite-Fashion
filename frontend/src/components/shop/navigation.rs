@@ -25,15 +25,25 @@ pub fn Navigation() -> impl IntoView {
     });
     
     // Helper function to check if a route is active
-    let is_active = move |path: &str| {
+    let shop_path = config.route_url("/shop");
+    let dashboard_path = config.route_url("/shop/dashboard");
+    let profile_path = config.route_url("/shop/profile");
+    
+    // Helper signals for active states
+    let is_shop_active = Signal::derive(move || {
         let current_path = location.pathname.get();
-        match path {
-            "/shop" => current_path == path || current_path == "/shop/",
-            "/shop/dashboard" => current_path.starts_with(path),
-            "/shop/profile" => current_path.starts_with(path),
-            _ => current_path.starts_with(path),
-        }
-    };
+        current_path == shop_path || current_path == format!("{}/", shop_path)
+    });
+    
+    let is_dashboard_active = Signal::derive(move || {
+        let current_path = location.pathname.get();
+        current_path.starts_with(&dashboard_path)
+    });
+    
+    let is_profile_active = Signal::derive(move || {
+        let current_path = location.pathname.get();
+        current_path.starts_with(&profile_path)
+    });
     
     view! {
         <nav class:scrolled=scrolled style="
@@ -55,13 +65,19 @@ pub fn Navigation() -> impl IntoView {
                     </A>
                 </div>
                 <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-                    <A href={config.route_url("/shop")} class="nav-link2" attr:class=move || if is_active("/shop") { "nav-link2 active" } else { "nav-link2" }>
+                    <A href={config.route_url("/shop")} class="nav-link2" attr:class=move || {
+                        if is_shop_active.get() { "nav-link2 active" } else { "nav-link2" }
+                    }>
                         "Shop"
                     </A>
-                    <A href={config.route_url("/shop/dashboard")} class="nav-link2" attr:class=move || if is_active("/shop/dashboard") { "nav-link2 active" } else { "nav-link2" }>
+                    <A href={config.route_url("/shop/dashboard")} class="nav-link2" attr:class=move || {
+                        if is_dashboard_active.get() { "nav-link2 active" } else { "nav-link2" }
+                    }>
                         "Dashboard"
                     </A>
-                    <A href={config.route_url("/shop/profile")} class="nav-link2" attr:class=move || if is_active("/shop/profile") { "nav-link2 active" } else { "nav-link2" }>
+                    <A href={config.route_url("/shop/profile")} class="nav-link2" attr:class=move || {
+                        if is_profile_active.get() { "nav-link2 active" } else { "nav-link2" }
+                    }>
                         "Profile"
                     </A>
                 </div>

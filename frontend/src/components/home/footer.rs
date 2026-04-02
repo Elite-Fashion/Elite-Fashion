@@ -25,7 +25,7 @@ pub fn Footer() -> impl IntoView {
                             <li><a href="#features">"Features"</a></li>
                             <li><a href="#gallery">"Gallery"</a></li>
                             <li><a href="#testimonials">"Reviews"</a></li>
-                            <li><a href="#">"Pricing"</a></li>
+                            <li><a href="#Hero">"Pricing"</a></li>
                         </ul>
                     </div>
                     
