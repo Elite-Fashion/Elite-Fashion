@@ -1,7 +1,10 @@
 use leptos::*;
+use leptos_router::*;
+use crate::config::AppConfig;
 
 #[component]
 pub fn Shop() -> impl IntoView {
+    let config = AppConfig::new();
     view! {
         <div class="shop-page" style="min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 100px 20px 40px; overflow-y: auto;">
             <div class="container" style="max-width: 1200px; margin: 0 auto;">
@@ -34,9 +37,9 @@ pub fn Shop() -> impl IntoView {
                 </div>
                 
                 <div class="back-to-home" style="text-align: center; margin-top: 40px;">
-                    <a href="/" style="background: white; color: #667eea; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-weight: 500; transition: all 0.3s ease; display: inline-block;">
+                    <A href={config.route_url("/")} class="back-to-home-btn">
                         "← Back to Home"
-                    </a>
+                    </A>
                 </div>
             </div>
         </div>

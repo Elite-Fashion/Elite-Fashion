@@ -900,6 +900,25 @@ nav.scrolled .nav-link {
     color: #667eea;
 }
 
+.back-to-home-btn {
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.back-to-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
