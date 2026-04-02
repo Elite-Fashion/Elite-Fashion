@@ -8,8 +8,8 @@ pub fn HomeApp() -> impl IntoView {
             <Navigation/>
             <div class="content">
                 <Hero/>
-                <Features/>
                 <Gallery/>
+                <Features/>
                 <Testimonials/>
                 <Footer/>
             </div>

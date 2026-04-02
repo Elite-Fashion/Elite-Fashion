@@ -3,17 +3,17 @@ use leptos::*;
 #[component]
 pub fn Profile() -> impl IntoView {
     view! {
-        <main style="padding: 100px 20px; color: white;">
+        <main style="padding: 120px 15px; color: white;">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 30px;">"Profile"</h1>
+                <h1 style="font-size: 2.2rem; margin-bottom: 25px;">"Profile"</h1>
                 <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px);">
                     <div style="display: flex; align-items: center; margin-bottom: 30px;">
                         <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin-right: 20px; display: flex; align-items: center; justify-content: center;">
                             <span style="font-size: 2rem;">"👤"</span>
                         </div>
                         <div>
-                            <h2 style="margin-bottom: 5px;">"John Doe"</h2>
-                            <p style="opacity: 0.8;">"john.doe@example.com"</p>
+                            <h2 style="margin-bottom: 5px;">"Ala L"</h2>
+                            <p style="opacity: 0.8;">"Ala-L@Elite-Fashion.com"</p>
                         </div>
                     </div>
                     <div style="display: grid; gap: 20px;">
