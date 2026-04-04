@@ -8,6 +8,12 @@ pub fn Shop() -> impl IntoView {
     let (selected_item, set_selected_item) = create_signal(None::<ShopItem>);
     let (lightbox_open, set_lightbox_open) = create_signal(false);
     
+    // Include component-specific CSS
+    let style = include_str!("shop.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
+    
     let open_lightbox = move |item: ShopItem| {
         set_selected_item.set(Some(item));
         set_lightbox_open.set(true);

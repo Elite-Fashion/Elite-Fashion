@@ -7,6 +7,12 @@ pub fn Hero() -> impl IntoView {
     let config = AppConfig::new();
     let (text_visible, set_text_visible) = create_signal(false);
     
+    // Include component-specific CSS
+    let style = include_str!("hero.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
+    
     // Trigger animation after component mounts
     leptos::create_effect(move |_| {
         leptos::set_timeout_with_handle(
@@ -16,7 +22,7 @@ pub fn Hero() -> impl IntoView {
     });
     
     view! {
-        <section id="home" class="hero" style="padding-top: 80px;">
+        <section id="home" class="hero">
             <div class="hero-background">
                 <div class="hero-overlay"></div>
             </div>

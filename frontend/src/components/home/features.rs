@@ -2,36 +2,38 @@ use leptos::*;
 
 #[component]
 pub fn Features() -> impl IntoView {
+    // Include component-specific CSS
+    let style = include_str!("features.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
     view! {
-        <section id="features" class="features" style="background: linear-gradient(135deg, #be9471 0%, #E0F6FF 100%); padding: 80px 0;">
+        <section id="features" class="features">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title" style="color: #333; font-size: 2.5rem; margin-bottom: 10px; font-weight: bold;">"Amazing Features"</h2>
-                    <p class="section-subtitle" style="color: #666; font-size: 1.2rem;">"Discover what makes our product incredible"</p>
+                    <h2 class="section-title">"Amazing Features"</h2>
+                    <p class="section-subtitle">"Discover what makes our product incredible"</p>
                 </div>
                 
                 <div class="features-grid">
                     {features_data().into_iter().enumerate().map(move |(_index, feature)| {
                         view! {
-                            <div class="feature-card feature-visible" 
-                                 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                                        border: none; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-                                        transition: all 0.3s ease; cursor: pointer; border-radius: 15px; padding: 30px;"
+                            <div class="feature-card feature-visible"
                                  on:mouseenter=move |_| {
                                      // Add hover effect
                                  }
                                  on:mouseleave=move |_| {
                                      // Remove hover effect
                                  }>
-                                <div class="feature-icon" style="background: rgba(255, 255, 255, 0.2); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                    <span class="icon-emoji" style="font-size: 2.5rem;">{feature.icon}</span>
+                                <div class="feature-icon">
+                                    <span class="icon-emoji">{feature.icon}</span>
                                 </div>
-                                <h3 class="feature-title" style="color: white; font-size: 1.5rem; margin-bottom: 15px; font-weight: bold;">{feature.title}</h3>
-                                <p class="feature-description" style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">{feature.description}</p>
-                                <div class="feature-stats" style="margin-top: 20px;">
-                                    <div class="stat" style="background: rgba(255, 255, 255, 0.2); padding: 12px 20px; border-radius: 25px;">
-                                        <span class="stat-number" style="color: white; font-weight: bold; font-size: 1.2rem;">{feature.stat_number}</span>
-                                        <span class="stat-label" style="color: rgba(255, 255, 255, 0.9); margin-left: 8px; font-size: 0.9rem;">{feature.stat_label}</span>
+                                <h3 class="feature-title">{feature.title}</h3>
+                                <p class="feature-description">{feature.description}</p>
+                                <div class="feature-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">{feature.stat_number}</span>
+                                        <span class="stat-label">{feature.stat_label}</span>
                                     </div>
                                 </div>
                             </div>

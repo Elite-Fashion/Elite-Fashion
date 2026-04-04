@@ -12,6 +12,12 @@ struct Testimonial {
 
 #[component]
 pub fn Testimonials() -> impl IntoView {
+    // Include component-specific CSS
+    let style = include_str!("testimonials.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
+    
     let (active_testimonial, set_active_testimonial) = create_signal(0);
     
     let testimonials = vec![

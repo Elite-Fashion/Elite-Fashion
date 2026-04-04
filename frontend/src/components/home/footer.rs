@@ -2,6 +2,11 @@ use leptos::*;
 
 #[component]
 pub fn Footer() -> impl IntoView {
+    // Include component-specific CSS
+    let style = include_str!("footer.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
     view! {
         <footer id="contact" class="footer">
             <div class="container">

@@ -8,6 +8,12 @@ pub fn Gallery() -> impl IntoView {
     
     let config = AppConfig::new();
     
+    // Include component-specific CSS
+    let style = include_str!("gallery.css");
+    leptos::document().head().unwrap()
+        .insert_adjacent_html("beforeend", &format!("<style>{}</style>", style))
+        .unwrap();
+    
     let gallery_images = vec![
         config.static_url("/images/product-1.webp"),
         config.static_url("/images/product-2.webp"), 
